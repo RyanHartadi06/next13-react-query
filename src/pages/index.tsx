@@ -17,7 +17,7 @@ export default function Home() {
     });
   };
 
-  const { isLoading, isError, data, error } = useQuery("todos", fetchNews);
+  const { isLoading, isError, data, error } = useQuery("news", fetchNews);
 
   function news() {
     if (data === undefined) {
@@ -32,10 +32,8 @@ export default function Home() {
   }
 
   if (isLoading) {
-    return;
+    return <div>Loading...</div>;
   }
-
-  console.log(news());
 
   return (
     <main
