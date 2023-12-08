@@ -1,4 +1,15 @@
-- name: Upload coverage reports to Codecov
-  uses: codecov/codecov-action@v3
-  env:
-    CODECOV_TOKEN: 0d064c10-48fe-486e-8354-e5cb846c6833
+name: CI/CD GOPG Petrokimia Gresik
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+
+    runs-on: ubuntu-latest
+    steps:
+     - name: Upload coverage reports to Codecov
+       uses: codecov/codecov-action@v3
+       env:
+          CODECOV_TOKEN: 0d064c10-48fe-486e-8354-e5cb846c6833
